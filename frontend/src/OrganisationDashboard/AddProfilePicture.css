@@ -1,0 +1,68 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+  }
+  
+  .modal-content {
+    background-color: #1e1e1e;
+    color: #fff;
+    border: 2px solid #00ff00;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 400px;
+  }
+  
+  .image-preview {
+    width: 100%;
+    max-height: 200px;
+    object-fit: contain;
+    margin: 10px 0;
+    border: 2px solid #00ff00;
+    border-radius: 8px;
+  }
+  
+  .file-section {
+    margin-bottom: 15px;
+  }
+  
+  .modal-actions button {
+    margin: 5px;
+    padding: 10px 15px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .save-btn {
+    background-color: #00ff00;
+    color: #1e1e1e;
+  }
+  
+  .save-btn:hover {
+    background-color: #000000;
+    color: #00ff00;
+    border: 1px solid #00ff00;
+  }
+  
+  .cancel-btn {
+    background-color: #ff3333;
+    color: white;
+  }
+  
+  .cancel-btn:hover {
+    background-color: #000000;
+    color: white;
+    border: 1px solid #ff3333;
+  }
+  

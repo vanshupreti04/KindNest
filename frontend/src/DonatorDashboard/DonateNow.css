@@ -1,0 +1,345 @@
+/* General Section Styling */
+.donate-section {
+  padding: 40px 20px;
+  background-color: #121212; /* Dark background for the section */
+  color: white;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 32px;
+  font-weight: bold;
+  color: #00ff00; /* Bright green for the title */
+  margin-bottom: 40px;
+  margin-top: -20px;
+}
+
+/* Flexbox Layout for Cards */
+.donate-cards {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+}
+
+/* Individual Card Styling */
+.donate-card {
+  padding: 20px;
+  border-radius: 8px;
+  width: 280px;
+  height: 250px;
+  margin-top: 40px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  text-align: center; /* Center the content inside */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: white;
+  opacity: 0.9; /* Slight opacity for the card content */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Space between the heading, description, and button */
+  align-items: center;
+}
+
+.donate-card:hover {
+  transform: scale(1.05); /* Slight scale-up effect on hover */
+}
+
+/* Money Card - White Border and Button */
+.money-card {
+  border: 2px solid #ffffff; /* White border */
+  background: url('https://www.toptal.com/designers/subtlepatterns/uploads/country-quilt-dark.png');
+  background-size: cover; /* Ensures the pattern covers the entire page */
+  background-repeat: repeat; /* Repeats the pattern to cover the page */
+  background-position: center; /* Centers the pattern */
+}
+
+.money-card h3 {
+  font-size: 22px;
+  font-weight: bold;
+  color: #ffffff; /* White heading */
+  margin-bottom: 15px;
+}
+
+.money-card .continue-button {
+  background-color: #ffffff; /* White button */
+  color: #121212; /* Dark text */
+}
+
+.money-card .card-content {
+  opacity: 0.8; /* Light opacity for card content */
+}
+
+.money-card:hover {
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.7); /* White glowing effect */
+}
+
+.money-card:hover .continue-button {
+  background-color: #000000; /* Black background on hover */
+  color: #ffffff; /* White text */
+  box-shadow: 0 0 10px #ffffff; /* Glowing white effect */
+}
+
+/* Items Card - Orange Border and Button */
+.items-card {
+  border: 2px solid #ff9900; /* Orange border */
+  background: url('https://www.toptal.com/designers/subtlepatterns/uploads/country-quilt-dark.png');
+  background-size: cover; /* Ensures the pattern covers the entire page */
+  background-repeat: repeat; /* Repeats the pattern to cover the page */
+  background-position: center; /* Centers the pattern */
+}
+
+.items-card h3 {
+  font-size: 22px;
+  font-weight: bold;
+  color: #ff9900; /* Orange heading */
+  margin-bottom: 15px;
+}
+
+.items-card .continue-button {
+  background-color: #ff9900; /* Orange button */
+  color: rgb(0, 0, 0);
+}
+
+.items-card .card-content {
+  opacity: 0.8; /* Light opacity for card content */
+}
+
+.items-card:hover {
+  box-shadow: 0 0 20px rgba(255, 153, 0, 0.5), 0 0 30px rgba(255, 153, 0, 0.7); /* Orange glowing effect */
+}
+
+.items-card:hover .continue-button {
+  background-color: #000000; /* Darker background on hover */
+  color: #ff9900; /* Orange text */
+  box-shadow: 0 0 10px #ff9900; /* Glowing orange effect */
+}
+
+/* Events Card - Blue Border and Button */
+.events-card {
+  border: 2px solid #0099ff; /* Blue border */
+  background: url('https://www.toptal.com/designers/subtlepatterns/uploads/country-quilt-dark.png');
+  background-size: cover; /* Ensures the pattern covers the entire page */
+  background-repeat: repeat; /* Repeats the pattern to cover the page */
+  background-position: center; /* Centers the pattern */
+}
+
+.events-card h3 {
+  font-size: 22px;
+  font-weight: bold;
+  color: #0099ff; /* Blue heading */
+  margin-bottom: 15px;
+}
+
+.events-card .continue-button {
+  background-color: #0099ff; /* Blue button */
+  color: rgb(0, 0, 0);
+}
+
+.events-card .card-content {
+  opacity: 0.8; /* Light opacity for card content */
+}
+
+.events-card:hover {
+  box-shadow: 0 0 20px rgba(0, 153, 255, 0.5), 0 0 30px rgba(0, 153, 255, 0.7); /* Blue glowing effect */
+}
+
+.events-card:hover .continue-button {
+  background-color: #000000; /* Darker background on hover */
+  color: #0099ff; /* Blue text */
+  box-shadow: 0 0 10px #0099ff; /* Glowing blue effect */
+}
+
+/* Button Styling */
+.continue-button {
+  padding: 10px 20px;
+  background-color: #00ff00;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin-top: 20px; /* Added margin to space out the button */
+}
+
+
+
+
+/* General Section Styling */
+.donate-section {
+  padding: 40px 20px;
+  background-color: #121212; /* Dark background for the section */
+  color: white;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 32px;
+  font-weight: bold;
+  color: #00ff00; /* Bright green for the title */
+  margin-bottom: 40px;
+  margin-top: -20px;
+}
+
+/* Flexbox Layout for Cards */
+.donate-cards {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+}
+
+/* Individual Card Styling */
+.donate-card {
+  padding: 20px;
+  border-radius: 8px;
+  width: 280px;
+  height: 250px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  text-align: center; /* Center the content inside */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: white;
+  opacity: 0.9; /* Slight opacity for the card content */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Space between the heading, description, and button */
+  align-items: center;
+}
+
+.donate-card:hover {
+  transform: scale(1.05); /* Slight scale-up effect on hover */
+}
+
+/* Money Card - White Border and Button */
+.money-card {
+  border: 2px solid #ffffff; /* White border */
+  background-color: #1e1e1e;
+}
+
+.money-card h3 {
+  font-size: 22px;
+  font-weight: bold;
+  color: #ffffff; /* White heading */
+  margin-bottom: 15px;
+}
+
+.money-card .continue-button {
+  background-color: #ffffff; /* White button */
+  color: #121212; /* Dark text */
+}
+
+.money-card .card-content {
+  opacity: 0.8; /* Light opacity for card content */
+}
+
+.money-card:hover {
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.7); /* White glowing effect */
+}
+
+.money-card:hover .continue-button {
+  background-color: #000000; /* Black background on hover */
+  color: #ffffff; /* White text */
+  box-shadow: 0 0 10px #ffffff; /* Glowing white effect */
+}
+
+/* Items Card - Orange Border and Button */
+.items-card {
+  border: 2px solid #ff9900; /* Orange border */
+  background-color: #2e2e2e;
+}
+
+.items-card h3 {
+  font-size: 22px;
+  font-weight: bold;
+  color: #ff9900; /* Orange heading */
+  margin-bottom: 15px;
+}
+
+.items-card .continue-button {
+  background-color: #ff9900; /* Orange button */
+  color: rgb(0, 0, 0);
+}
+
+.items-card .card-content {
+  opacity: 0.8; /* Light opacity for card content */
+}
+
+.items-card:hover {
+  box-shadow: 0 0 20px rgba(255, 153, 0, 0.5), 0 0 30px rgba(255, 153, 0, 0.7); /* Orange glowing effect */
+}
+
+.items-card:hover .continue-button {
+  background-color: #000000; /* Darker background on hover */
+  color: #ff9900; /* Orange text */
+  box-shadow: 0 0 10px #ff9900; /* Glowing orange effect */
+}
+
+/* Events Card - Blue Border and Button */
+.events-card {
+  border: 2px solid #0099ff; /* Blue border */
+  background-color: #2e2e2e;
+}
+
+.events-card h3 {
+  font-size: 22px;
+  font-weight: bold;
+  color: #0099ff; /* Blue heading */
+  margin-bottom: 15px;
+}
+
+.events-card .continue-button {
+  background-color: #0099ff; /* Blue button */
+  color: rgb(0, 0, 0);
+}
+
+.events-card .card-content {
+  opacity: 0.8; /* Light opacity for card content */
+}
+
+.events-card:hover {
+  box-shadow: 0 0 20px rgba(0, 153, 255, 0.5), 0 0 30px rgba(0, 153, 255, 0.7); /* Blue glowing effect */
+}
+
+.events-card:hover .continue-button {
+  background-color: #000000; /* Darker background on hover */
+  color: #0099ff; /* Blue text */
+  box-shadow: 0 0 10px #0099ff; /* Glowing blue effect */
+}
+
+/* Button Styling */
+.continue-button {
+  padding: 10px 20px;
+  background-color: #00ff00;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin-top: 20px; /* Added margin to space out the button */
+}
+
+.continue-button:hover {
+  background-color: #000000; /* Darker background on hover */
+  color: #00ff00; /* Green text */
+  transform: scale(1.05); /* Slight hover effect */
+  box-shadow: 0 0 10px #00ff00; /* Green glowing effect */
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .donate-cards {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+
+  .donate-card {
+    width: 100%;
+    max-width: 350px;
+  }
+
+  .section-title {
+    font-size: 28px;
+  }
+}

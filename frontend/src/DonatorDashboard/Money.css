@@ -1,0 +1,128 @@
+/* Overall Section */
+.money-section {
+  padding: 40px;
+  text-align: center;
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+  max-width: 800px;
+  margin: 50px auto;
+  color: white;
+}
+
+/* Section Title */
+.section-title-1 {
+  font-size: 40px;
+  font-weight: 700;
+  
+}
+
+/* Tagline */
+.tagline {
+  font-size: 18px;
+  font-weight: 400;
+  color: #aaa;
+  margin-bottom: 30px;
+}
+
+/* Donation Container */
+.donation-container {
+  background-color: #2b2b2b;
+  padding: 40px;
+  border-radius: 10px;
+  border: 2px solid #00FF00;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Donation Heading */
+.donation-heading {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #00FF00;
+}
+
+/* Amount Input Field */
+.amount-input {
+  padding: 15px;
+  width: 200px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 2px solid #00FF00;
+  margin-bottom: 20px;
+  text-align: center;
+  outline: none;
+  background-color: #333;
+  color: white;
+}
+
+.amount-input:focus {
+  border-color: #00CC00;
+}
+
+/* Slider Container */
+.slider-container {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.amount-slider {
+  width: 100%;
+  height: 8px;
+  background: #00FF00;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+}
+
+.amount-slider:hover {
+  background: #00CC00;
+}
+
+.amount-slider::-webkit-slider-thumb {
+  width: 15px;
+  height: 15px;
+  background: #00FF00;
+  border-radius: 50%;
+  cursor: pointer;
+  -webkit-appearance: none;
+}
+
+.amount-slider::-moz-range-thumb {
+  width: 15px;
+  height: 15px;
+  background: #00FF00;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.slider-value {
+  position: absolute;
+  top: -30px;
+  right: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #00FF00;
+}
+
+/* Donate Button */
+.donate-button {
+  padding: 15px 30px;
+  font-size: 18px;
+  background-color: #00FF00;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  box-shadow: 0 5px 10px rgba(0, 255, 0, 0.2);
+}
+
+.donate-button:hover {
+  background-color: #00CC00;
+  box-shadow: 0 5px 15px rgba(0, 255, 0, 0.3);
+}
+
+.donate-button:focus {
+  outline: none;
+}

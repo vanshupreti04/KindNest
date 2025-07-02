@@ -1,0 +1,201 @@
+/* General Container */
+.about-us-container {
+    font-family: 'Kanit', sans-serif;
+    color: #ffffff;
+    text-align: center;
+    padding: 40px 20px;
+    line-height: 1.6;
+  }
+  
+  /* Welcome Title */
+  .welcome-title-1 {
+    font-size: 48px;
+    font-weight: bold;
+    color: #00FF00;
+    text-transform: capitalize;
+    margin-bottom: 20px; /* Space between title and tagline */
+    opacity: 0; /* Initial state for fade-in animation */
+    animation: fadeInHeading 2s ease-out forwards;
+  }
+  
+  /* Tagline Container */
+  .tagline-container-1{
+    margin-top: 20px; /* Add space between heading and tagline */
+  }
+  
+  /* Tagline */
+  .tagline-1 {
+    font-family: 'Merriweather', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: #d4d4d4;
+    line-height: 1.8;
+    margin-bottom: 50px;
+    margin-top: 35px;
+  }
+  
+  .tagline-1.highlight-green-1 {
+    color: #00FF00;
+    font-weight: bold;
+  }
+  
+  /* Keyframes for Heading Fade-in Animation */
+  @keyframes fadeInHeading {
+    0% {
+      opacity: 0;
+      transform: translateY(-50px); /* Start above */
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0); /* Final position */
+    }
+  }
+  
+  /* Goals and Ethics Section */
+  .goals-ethics {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    margin: 0 140px;
+    text-align: left;
+  }
+  
+  .goals-ethics-left {
+    flex: 2;
+    margin-right: 20px; /* Space between left and right content */
+  }
+  
+  .goals-heading {
+    font-size: 36px;
+    font-weight: bold;
+    color: #00FF00;
+    margin-bottom: 15px;
+  }
+  
+  .goals-description {
+    font-size: 18px;
+    color: #d4d4d4;
+    line-height: 1.8;
+    margin-bottom: 30px; /* Add margin to space out the lines */
+  }
+  
+  /* Button Styling */
+  .goals-ethics-right {
+    flex: 1;
+    text-align: center;
+    margin-right: 20px;
+  }
+  
+  .learn-more-button {
+    padding: 12px 24px;
+    color: #f0f0f0;
+    border: 2px solid #ffcc00;
+    background-color: rgba(255, 204, 0, 0.2);
+    border-radius: 25px;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  }
+  
+  /* Hover Effect */
+  .learn-more-button:hover {
+    transform: scale(1.1);
+    border-color: #ffcc00;
+    color: #ffcc00;
+    box-shadow: 0 4px 15px rgba(255, 204, 0, 0.5);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .goals-ethics {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .goals-ethics-left,
+    .goals-ethics-right {
+      margin: 0 20px; /* Adjust margin for smaller screens */
+    }
+  }
+  
+/* General Section Styling */
+.about-us-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  margin: 40px 140px; /* Add space around sections */
+  text-align: left;
+}
+
+/* Left Section */
+.about-us-left {
+  flex: 2;
+  margin-right: 20px; /* Space between left and right content */
+}
+
+.section-heading {
+  font-size: 36px;
+  font-weight: bold;
+  color: #00FF00; /* Green color for heading */
+  margin-bottom: 15px;
+}
+
+.section-description {
+  font-size: 18px;
+  color: #d4d4d4;
+  line-height: 1.8;
+  margin-bottom: 30px; /* Add margin to space out the lines */
+}
+
+/* Right Section */
+.about-us-right {
+  flex: 1;
+  text-align: center;
+  margin-right: 20px; /* Adjust margin for alignment */
+}
+
+/* Button Styling */
+.learn-more-button {
+  padding: 12px 24px;
+  color: #f0f0f0; /* Light gray text */
+  border: 2px solid #ffcc00; /* Yellow border */
+  background-color: rgba(255, 204, 0, 0.2); /* Semi-transparent yellow */
+  border-radius: 25px;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* Button Hover Effect */
+.learn-more-button:hover {
+  transform: scale(1.1); /* Slightly enlarge */
+  border-color: #ffcc00; /* Change border color to yellow */
+  color: #ffcc00; /* Change text color to yellow */
+  box-shadow: 0 4px 15px rgba(255, 204, 0, 0.5); /* Yellow shadow */
+}
+
+/* Spacing Between Sections */
+.about-us-section + .about-us-section {
+  margin-top: 50px; /* Add extra space between sections */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-us-section {
+    flex-direction: column; /* Stack sections vertically */
+    text-align: center; /* Center-align content for smaller screens */
+  }
+
+  .about-us-left,
+  .about-us-right {
+    margin: 20px 0; /* Add spacing for smaller screens */
+  }
+}
+
+  

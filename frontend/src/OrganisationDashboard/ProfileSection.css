@@ -1,0 +1,57 @@
+/* Profile Section Styling */
+.profile-section-1 {
+  background: url('https://www.toptal.com/designers/subtlepatterns/uploads/country-quilt-dark.png');
+  background-size: cover; /* Ensures the pattern covers the entire page */
+  background-repeat: repeat; /* Repeats the pattern to cover the page */
+  background-position: center; /* Centers the pattern */ /* Dark background */
+  color: #ffffff; /* White text */
+  padding: 35px;
+  padding-right: 578px; /* Spacing around content */
+  border-radius: 10px; /* Smooth rounded corners */
+  width: 90%; /* Ensure responsive layout */
+  max-width: 600px; /* Limit width for larger screens */
+  margin-left: 10px;
+  margin-top: 20px; /* Center the container */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+/* Title Styling */
+.profile-title-1 {
+  font-size: 33px; /* Size of the title */
+  font-weight: bold; /* Make it stand out */
+  color: #00ff00; /* Bright green for the title */
+  margin-bottom: 20px; /* Space below the title */
+}
+
+/* Details Section */
+.profile-details-1 {
+  margin-top: 20px; /* Space above the details */
+}
+
+/* Individual Info Styling */
+.profile-info-1 {
+  font-size: 20px; /* Font size for detail text */
+  margin-bottom: 10px; /* Space between info lines */
+  line-height: 1.5; /* Line height for readability */
+}
+
+/* Button Styling */
+.authenticate-btn-1 {
+  margin-top: 20px; /* Space above the button */
+  padding: 10px 20px; /* Padding inside the button */
+  background-color: #00ff00; /* Green background */
+  color: #121212; /* Dark text for contrast */
+  font-size: 16px; /* Button font size */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor for interaction */
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+}
+
+/* Button Hover Effect */
+.authenticate-btn-1:hover {
+  background-color: #000000; /* Change to black on hover */
+  color: #00ff00; /* Bright green text */
+  transform: scale(1.05); /* Slightly enlarge */
+  box-shadow: 0 0 10px #00ff00; /* Green glowing effect */
+}

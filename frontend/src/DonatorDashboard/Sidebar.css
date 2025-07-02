@@ -1,0 +1,96 @@
+/* Sidebar */
+.sidebar{
+    position: fixed;
+    top: 90px; /* Move the sidebar up slightly to avoid scrolling */
+    left: -10px;
+    width: 200px;
+    height: calc(100vh - 110px); /* Adjust height to prevent overflow */
+    background-color: #1e1e1e;
+    color: #ffffff;
+    border-top: 1px solid #00ff00;
+    border-right: 1px solid #00ff00;
+    border-bottom: 1px solid #00ff00;
+    border-left: none;
+    bottom: 20px;
+    border-radius: 8px;
+    overflow-y: auto;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  /* Sidebar Icons */
+  .sidebar-icons {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  }
+  
+  .icon {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    margin: 15px 0;
+    cursor: pointer;
+    padding: 10px;
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+  
+  .icon:hover {
+    transform: scale(1.05);
+    background-color: #00aa00;
+    color: #121212;
+    border-radius: 5px;
+  }
+  
+  /* Content Section */
+  .content-container {
+    margin-left: 220px;
+    margin-top: 90px; /* Space for the top menu */
+    margin-right: 20px;
+    padding: 20px;
+    border: 1px solid #00ff00;
+    background-color: #121212;
+    border-radius: 8px;
+    overflow-y: auto;
+    max-height: calc(100vh - 180px); /* Limit content height to fit without scrolling */
+    box-sizing: border-box; /* Ensure padding is considered in height */
+  }
+  
+  /* Button Hover */
+  button-1 {
+    padding: 10px 20px;
+    border: 1px solid #00ff00;
+    background-color: #1e1e1e;
+    color: #00ff00;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  }
+  
+  button-1:hover {
+    background-color: #00aa00;
+    box-shadow: 0 0 10px #00ff00;
+    transform: scale(1.1);
+  }
+  /* Fade Animation */
+  .fade-animation {
+    animation: fadeInOut 10s ease-in-out infinite; /* Animation cycle */
+    font-size: 18px;
+    font-weight: bold;
+    color: #00ff00;
+    text-align: center;
+  }
+  
+  @keyframes fadeInOut {
+    0% {
+      opacity: 0;
+    }
+    20% {
+      opacity: 1;
+    }
+    80% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  

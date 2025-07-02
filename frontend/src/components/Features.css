@@ -1,0 +1,121 @@
+.feature{
+    display: flex;
+    margin-left: -18px;
+}
+.highlighted-image-container-2 {
+    display: flex; 
+    align-items: center; 
+    margin-top: -40px; 
+    margin-left: 678px;
+}
+
+.highlighted-image-2 {
+    width: 290px; 
+    height: auto; 
+    margin-left: 300px; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+}
+.text-content-2 {
+    margin-left: -948px;
+    margin-top: -165px;
+}
+.neon-heading-2 {
+    font-family: 'Kanit', sans-serif; 
+    font-size: 60px; 
+    font-weight: bold;
+    margin-top: 130px;
+    color: #fff; 
+    text-shadow: 0 0 5px #00ff00;
+    margin-bottom: 10px; 
+}
+.half-green-2{
+    color: #fff; 
+    text-shadow: 0 0 5px #00ff00; 
+}
+.description-2 {
+    font-size: 14px;
+    color: #555; 
+    margin: 15px 0; 
+    margin-left: 7px;
+    line-height: 1.5;
+    padding-bottom: 50px;
+}
+.view-organisation-button-2 {
+    background-color: transparent; 
+    color: #00ff00;
+    border: 2px solid #00ff00; 
+    border-radius: 10px; 
+    padding: 20px 30px; 
+    cursor: pointer;
+    font-size: 16px; 
+    transition: all 0.3s ease, box-shadow 0.3s ease; 
+    position: relative; 
+    margin-top: -40px;
+    margin-left: 125px;
+}
+.view-organisation-button-2:hover {
+    color : #00ff00; 
+    box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
+}
+.feature-2{
+    display: flex;
+    margin-left: -30px;
+}
+.text-content-3{
+    margin-left: 100px;
+}
+.neon-heading-3{
+    font-family: 'Kanit', sans-serif; 
+    font-size: 60px; 
+    font-weight: bold; 
+    margin-top: 130px;
+    color: #fff; 
+    text-shadow: 0 0 5px #00ff00; 
+    margin-bottom: 10px; 
+}
+.half-green-3{
+    color: #fff; 
+    text-shadow: 0 0 5px #00ff00; 
+}
+.description-3{
+    font-size: 14px; 
+    color: #555; 
+    margin: 15px 0;
+    margin-left: 7px;
+    line-height: 1.5;
+    padding-bottom: 50px;
+}
+.view-organisation-button-3{
+    background-color: transparent;
+    color: #00ff00; 
+    border: 2px solid #00ff00; 
+    border-radius: 10px; 
+    padding: 20px 30px;
+    cursor: pointer; 
+    font-size: 16px; 
+    transition: all 0.3s ease, box-shadow 0.3s ease; 
+    position: relative; 
+    margin-top: -20px;
+    margin-left: 93px;
+}
+.view-organisation-button-3:hover{
+    color : #00ff00; 
+    box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00; 
+}
+.feature-3{
+    display: flex;
+    margin-left: -18px;
+}
+.highlighted-image-container-3 {
+    display: flex; 
+    align-items: center; 
+    margin: 130px 0; 
+}
+.highlighted-image-3 {
+    width: 290px;
+    height: auto; 
+    margin-left: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+}

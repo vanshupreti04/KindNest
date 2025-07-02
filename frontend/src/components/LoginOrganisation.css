@@ -1,0 +1,69 @@
+.login-organisation-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    body {
+      background: url('https://www.toptal.com/designers/subtlepatterns/uploads/country-quilt-dark.png');
+      background-size: cover; /* Ensures the pattern covers the entire page */
+      background-repeat: repeat; /* Repeats the pattern to cover the page */
+      background-position: center; /* Centers the pattern */
+      position: relative;
+      z-index: -1;
+    }
+  }
+  
+  .login-heading {
+    font-size: 36px;
+    color: #00ff00;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+  
+  .error-message {
+    color: #ffcc00;
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+  
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+  }
+  
+  .login-form input {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 2px solid #444;
+    border-radius: 4px;
+    background-color: #1e1e1e;
+    color: #ffffff;
+  }
+  
+  .login-form input:focus {
+    border-color: #00ff00;
+    outline: none;
+  }
+  
+  .login-button-1 {
+    padding: 10px;
+    background-color: #00ff00;
+    color: #121212;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .login-button-1:hover {
+    transform: scale(1.05); /* Slight pop-out effect */
+    background-color: #121212; /* Change background to black */
+    color: #00ff00; /* Change text color to green */
+    box-shadow: 0 0 15px 5px rgba(0, 255, 0, 0.7); /* Green glowing shadow */
+  }
+  
+  

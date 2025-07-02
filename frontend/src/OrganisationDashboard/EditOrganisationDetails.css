@@ -1,0 +1,82 @@
+/* EditOrganisationDetails.css */
+.edit-organisation-details {
+  background: url('https://www.toptal.com/designers/subtlepatterns/uploads/country-quilt-dark.png');
+  background-size: cover; /* Ensures the pattern covers the entire page */
+  background-repeat: repeat; /* Repeats the pattern to cover the page */
+  background-position: center; /* Centers the pattern */ /* Dark background */
+    color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 30px auto;
+    width: 85%;
+    max-width: 500px;
+    overflow: hidden; /* Prevent overflow */
+    text-align: left;
+  }
+  
+  .edit-organisation-details h2 {
+    font-size: 17px;
+    margin-bottom: 15px;
+    color: #00ff00;
+    text-align: center;
+    margin-top: -9px;
+  }
+  
+  .form-field {
+    display: flex;
+  flex-direction: column;
+  gap: 10px; /* Reduced spacing between inputs */
+  align-items: flex-start;
+  }
+  
+  .form-field label {
+    font-size: 12px; /* Smaller label size */
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 2px;
+    margin-top: 8px;
+  }
+  
+  .form-field input {
+    width: 96%;
+    padding: 6px;
+    background-color: #1e1e1e;
+    border: 2px solid #00ff00;
+    color: #ffffff;
+    border-radius: 6px;
+    font-size: 12px;
+  }
+  .form-field input:focus{
+    outline: none;
+  border-color: #00aa00; /* Darker green on focus */
+  box-shadow: 0 0 8px rgba(0, 255, 0, 0.5);
+  }
+  
+  .save-button {
+    background-color: #00ff00;
+    font-weight: bold;
+    color: #000000;
+    padding: 8px 12px; 
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px; 
+    margin-top: 9px;
+    margin-left: 195px;
+    border-radius: 6px;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease; 
+  }
+  
+  .save-button:hover {
+    background-color: #000;
+    color: #00ff00;
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #00ff00;
+  }
+  .message {
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #00ff00;
+    text-align: center;
+  }

@@ -1,0 +1,98 @@
+/* Edit Profile Section */
+.edit-profile-section {
+  padding: 20px; /* Reduced padding for compactness */
+  background: url('https://www.toptal.com/designers/subtlepatterns/uploads/country-quilt-dark.png');
+  background-size: cover; /* Ensures the pattern covers the entire page */
+  background-repeat: repeat; /* Repeats the pattern to cover the page */
+  background-position: center; /* Centers the pattern */ /* Dark background */
+  border-radius: 8px; /* Slightly smaller radius */
+  margin: 30px auto; /* Centered with minimal spacing */
+  width: 85%; /* Reduced width for compact layout */
+  max-width: 500px; /* Smaller max width */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+  overflow: hidden; /* Prevent overflow */
+  text-align: left; /* Ensure text alignment starts from the left */
+}
+
+/* Heading Styling */
+.edit-profile-heading {
+  font-size: 18px; /* Smaller heading size */
+  color: #00ff00; /* Bright green */
+  margin-bottom: 8px; /* Reduced gap between heading and form */
+  text-align: center;
+  margin-top: -2px; /* Less negative margin from top */
+}
+
+/* Form Styling */
+.edit-profile-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* Reduced spacing between inputs */
+  align-items: flex-start; /* Align items to the left */
+}
+
+.edit-profile-form label {
+  font-size: 12px; /* Smaller label size */
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 4px; /* Smaller gap below label */
+}
+
+.edit-profile-form input {
+  width: 96%; /* Ensure full width of container */
+  padding: 8px; /* Reduced input padding */
+  font-size: 12px; /* Smaller font size */
+  border: 2px solid #00ff00; /* Green border */
+  border-radius: 6px; /* Smaller radius */
+  background-color: #1e1e1e; /* Slightly lighter background */
+  color: #ffffff; /* White text */
+}
+
+.edit-profile-form input:focus {
+  outline: none;
+  border-color: #00aa00; /* Darker green on focus */
+  box-shadow: 0 0 8px rgba(0, 255, 0, 0.5); /* Subtle glowing effect */
+}
+
+/* Save Button */
+.save-button-1 {
+  padding: 8px 12px; /* Compact button size */
+  font-size: 12px; /* Smaller button font size */
+  font-weight: bold;
+  color: #000000;
+  background-color: #00ff00;
+  border: none;
+  margin-top: 2px;
+  margin-left: 200px;
+  border-radius: 6px; /* Smaller radius */
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.save-button-1:hover {
+  background-color: #000000; /* Black background */
+  color: #00ff00; /* Green text */
+  transform: scale(1.05); /* Slight hover effect */
+  box-shadow: 0 0 10px #00ff00, 0 0 20px rgba(0, 255, 0, 0.5); /* Glowing effect */
+}
+
+/* Ensure responsiveness */
+@media (max-width: 768px) {
+  .edit-profile-section {
+    padding: 8px; /* Reduced padding for smaller screens */
+  }
+
+  .edit-profile-heading {
+    font-size: 16px; /* Smaller heading for small screens */
+  }
+
+  .edit-profile-form input {
+    font-size: 10px; /* Adjusted input size */
+    padding: 6px; /* Reduced input padding */
+  }
+
+  .save-button {
+    font-size: 10px; /* Smaller button font size */
+    padding: 6px 8px; /* Compact button size */
+  }
+}

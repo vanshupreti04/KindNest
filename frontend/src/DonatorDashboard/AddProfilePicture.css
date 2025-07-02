@@ -1,0 +1,133 @@
+/* Modal Overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8); /* Semi-transparent black */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    background-color: #1e1e1e; /* Dark background */
+    border: 2px solid #00ff00; /* Green border */
+    border-radius: 10px;
+    width: 400px;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 255, 0, 0.4); /* Glowing shadow */
+    animation: slideIn 0.5s ease; /* Animation effect */
+  }
+  
+  /* Animation for Modal */
+  @keyframes slideIn {
+    from {
+      transform: translateY(-50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Modal Title */
+  .modal-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #00ff00;
+    margin-bottom: 8px;
+    margin-top: -2px;
+  }
+  
+  /* Image Preview */
+  .image-container {
+    margin: 15px 0;
+  }
+  
+  .image-preview {
+    width: 100%; /* Large image preview */
+    max-height: 250px;
+    object-fit: contain;
+    border: 2px dashed #00ff00;
+    border-radius: 8px;
+    margin-bottom: 15px;
+  }
+  
+  .no-image-text {
+    color: #aaa;
+    font-style: italic;
+  }
+  
+  /* Choose File Section */
+  .change-button {
+    margin-bottom: 15px;
+  }
+  
+  .choose-file-label {
+    display: inline-block;
+    background-color: #00ff00;
+    color: #1e1e1e;
+    padding: 8px 12px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+  
+  .choose-file-label:hover {
+    background-color: #009900;
+    transform: scale(1.05);
+  }
+  
+  .file-input {
+    display: none; /* Hide the file input */
+  }
+  
+  /* Action Buttons */
+  .modal-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+  .save-button,
+  .cancel-button {
+    padding: 8px 15px;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .save-button {
+    background-color: #00ff00;
+    color: #121212;
+    margin-left: 73px;
+  }
+  
+  .save-button:hover {
+    background-color: #009900;
+    box-shadow: 0 0 8px #00ff00;
+  }
+  
+  .cancel-button {
+    background-color: #ff3333;
+    color: white;
+    margin-top: 9px;
+    margin-left: 100px;
+  }
+  
+  .cancel-button:hover {
+    background-color: #cc0000;
+    box-shadow: 0 0 8px #ff3333;
+  }
+  

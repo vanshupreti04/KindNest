@@ -1,0 +1,109 @@
+.messages {
+  background-color: #121212;
+  color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Center Heading */
+.messages-heading {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center; /* Center align the heading */
+  font-family: 'Arial', sans-serif; /* Update font style for heading */
+  color: #00ff00;
+}
+.message-record {
+  background-color: #1e1e1e;
+  padding: 15px;
+  margin: 20px 0; /* Add spacing between records */
+  border-radius: 8px;
+  display: flex; /* Flexbox for alignment */
+  flex-direction: column;
+  position: relative;
+}
+
+.message-detail {
+  margin: 8px 0; /* Reduced spacing between details */
+  font-size: 16px; /* Adjust font size */
+  font-family: 'Arial', sans-serif;
+}
+
+.message-actions {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column; /* Stack buttons vertically */
+  gap: 8px; /* Add spacing between buttons */
+}
+
+.accept-button,
+.reject-button {
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+  margin-right: 6px;
+  transition: 0.3s ease;
+}
+
+.accept-button {
+  background-color: #00ff00;
+  color: #121212;
+}
+
+.accept-button:hover {
+  background-color: #000;
+  color: #00ff00;
+  box-shadow: 0 0 10px #00ff00;
+}
+
+.reject-button {
+  background-color: #ff3333;
+  color: #fff;
+}
+
+.reject-button:hover {
+  background-color: #000;
+  color: #ff3333;
+  box-shadow: 0 0 10px #ff3333;
+}
+
+.center-message {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #00ff00;
+  background-color: #1e1e1e;
+  padding: 20px;
+  margin: 20px auto;
+  border-radius: 8px;
+  animation: fadeInOut 2s ease-in-out;
+  width: 60%;
+}
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateY(-20px); }
+  50% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(20px); }
+}
+
+/* Event Done Button */
+.event-done-button {
+  padding: 10px 15px;
+  border: 2px solid #00ff00;
+  background: linear-gradient(to right, #003300, #00ff00);
+  color: #000000;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.event-done-button:hover {
+  background-color: #121212;
+  box-shadow: 0 0 10px #00ff00;
+}

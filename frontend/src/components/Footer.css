@@ -1,0 +1,192 @@
+/* src/components/Footer.css */
+.footer {
+    display: flex;
+    justify-content: space-between; /* Aligns the left and right sections */
+    align-items: center;
+    padding: 18px 20px;
+    color: #ffffff;
+    font-size: 14px;
+    background-color: transparent;
+    margin-top: 25px;
+}
+
+.footer-left {
+    flex: 1;
+    margin-left: 45px;
+}
+
+.footer-right {
+    display: flex;
+    gap: 25px; /* Reduced the gap between social icons */
+    margin-right: 45px;
+}
+
+/* Give Feedback button container */
+.feedback-button-container {
+    margin: 0 auto; /* Centers the feedback button */
+}
+
+/* Give Feedback button styles */
+.feedback-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-left: -810px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #00ff00;
+    background-color: black;
+    border: 2px solid #00ff00;
+    border-radius: 7px;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s ease;
+}
+
+.feedback-button:hover {
+    background-color: #00ff00;
+    color: black;
+    transform: scale(1.05);
+}
+.feedback-input {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+.feedback-input:focus{
+    border: 3px solid #00ff00;
+}
+
+/* Social icons styles */
+.social-icons a {
+    text-decoration: none;
+    font-size: 20px;
+    color: #ffffff;
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for color and transform */
+    margin-right: 15px; /* Space between icons */
+}
+
+.social-icons a:hover {
+    color: #00ff00; /* Change icon color to green */
+    transform: scale(1.2); /* Enlarge the icon on hover */
+}
+
+/* Modal styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    max-width: 90%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .modal-content h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  textarea {
+    width: 90%;
+    height: 120%;
+    padding: 10px;
+    font-size: 14px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+    margin-bottom: 20px;
+  }
+  
+  textarea:focus {
+    border-color: #00ff00;
+    outline: none;
+    border: 2px solid #00ff00;
+  }
+  
+  .modal-buttons {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .send-feedback-btn,
+  .cancel-feedback-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .send-feedback-btn {
+    background-color: #00ff00;
+    color: black;
+    border: none;
+  }
+  
+  .send-feedback-btn:hover {
+    background-color: #000000;
+    color: #00ff00;
+    border: 2px solid #00ff00;
+  }
+  
+  .cancel-feedback-btn {
+    background-color: #ccc;
+    color: black;
+    border: none;
+  }
+  
+  .cancel-feedback-btn:hover {
+    background-color: #999;
+  }
+
+  .add-photo-container {
+    margin: 15px 0;
+    text-align: center;
+  }
+  
+  .add-photo-button {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    text-align: center;
+  }
+  
+  .add-photo-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .photo-preview {
+    margin-top: 10px;
+    text-align: center;
+  }
+  
+  .photo-preview img {
+    max-width: 100px;
+    max-height: 100px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  

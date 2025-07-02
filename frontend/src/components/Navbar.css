@@ -1,0 +1,182 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    margin: 20px 50px 0; 
+}
+.company-name {
+    font-size: 30px;
+}
+.nav-buttons {
+    display: flex;
+    align-items: center;
+}
+.nav-button {
+    background: none;
+    border: 2px solid transparent; 
+    color: #ffffff; 
+    padding: 12px 20px; 
+    cursor: pointer;
+    margin-left: 20px;
+    transition: color 0.3s, border-color 0.3s, background-color 0.3s, transform 0.3s;
+    font-size: 16px;
+    text-decoration: none;
+    border-radius: 20px;
+}
+.nav-button:hover {
+    color: #f0f0f0; 
+    border-color: #ffcc00; 
+    background-color: rgba(255, 204, 0, 0.2);
+    transform: translateY(-3px);
+}
+.login-container {
+    position: relative;
+}
+.login-button {
+    background: none;
+    border: 2px solid transparent; 
+    color: #ffffff; 
+    cursor: pointer;
+}
+.dropdown {
+    margin-top: 12px;
+    display: none;
+    position: absolute;
+    background-color: #121212;
+    border: 1px solid #ffffff; 
+    z-index: 1;
+    margin-left: 15px;
+    font-size: 13px;
+}
+.login-container:hover .dropdown {
+    display: block; 
+}
+.dropdown-button {
+    display: block;
+    color: #ffffff; 
+    padding: 10px;
+    margin-left: 5px;
+    border-radius: 25px;
+    background: none;
+    cursor: pointer;
+    transition: background 0.3s, border-color 0.3s, transform 0.3s;
+    text-decoration: none;
+}
+.dropdown-button:hover {
+    background-color: rgba(255, 204, 0, 0.2);
+    border-color: #ffcc00; 
+    margin: 2px;
+}
+.container {
+    margin: 20px 50px;
+};
+
+/* Popup Overlay */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent dark overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure it appears above all other elements */
+}
+
+/* Popup Box */
+.popup-box {
+    background: #121212; /* Dark background */
+    padding: 30px 40px; /* Inner spacing */
+    border-radius: 12px; /* Rounded corners */
+    text-align: center; /* Center text inside the box */
+    animation: popInOut 4s infinite ease-in-out; /* Slower animation */
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5), 0 0 20px rgba(0, 255, 0, 0.5); /* Green glow */
+    max-width: 400px; /* Constrain width for responsive design */
+    width: 90%; /* Responsive for smaller screens */
+    font-family: 'Kanit', sans-serif; /* Modern font */
+    color: #ffffff; /* White text color */
+    margin: 0 auto; /* Center horizontally */
+    margin-top: 20px;
+}
+
+/* Animation: Slower Pop-in and Pop-out */
+@keyframes popInOut {
+    0%, 100% {
+        transform: scale(1); /* Default size */
+    }
+    50% {
+        transform: scale(1.05); /* Slightly smaller pop-out */
+    }
+}
+
+/* Heading */
+.popup-heading {
+    font-size: 24px;
+    font-weight: bold;
+    color: #00FF00; /* Green heading */
+    margin-bottom: 20px; /* Space below heading */
+}
+
+/* Contact Content */
+.popup-content {
+    font-size: 18px;
+    color: #d4d4d4; /* Light gray */
+    margin-bottom: 20px; /* Space between content and close button */
+    display: flex;
+    flex-direction: column; /* Stack contact items vertically */
+    gap: 15px; /* Space between rows */
+}
+
+.popup-item {
+    display: flex;
+    align-items: center; /* Align icon and text */
+    justify-content: center; /* Center content horizontally */
+    gap: 10px; /* Space between icon and text */
+}
+
+.popup-icon {
+    font-size: 20px; /* Slightly larger icon */
+}
+
+/* Close Button */
+.close-popup {
+    padding: 10px 20px;
+    color: #ffffff;
+    border: 2px solid #00FF00; /* Green border */
+    background: transparent;
+    border-radius: 20px;
+    font-size: 14px; /* Smaller button font */
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* Hover Effect for Close Button */
+.close-popup:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(0, 255, 0, 0.5); /* Green glow */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .popup-box {
+        width: 90%; /* Adjust for smaller screens */
+        padding: 20px 30px;
+    }
+
+    .popup-heading {
+        font-size: 20px; /* Slightly smaller heading */
+    }
+
+    .popup-content {
+        font-size: 16px; /* Adjust text size */
+    }
+
+    .close-popup {
+        padding: 8px 15px; /* Compact button size */
+    }
+}

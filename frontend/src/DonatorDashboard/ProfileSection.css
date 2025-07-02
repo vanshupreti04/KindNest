@@ -1,0 +1,65 @@
+/* Profile Section Styling */
+.profile-section {
+  background: url('https://www.toptal.com/designers/subtlepatterns/uploads/country-quilt-dark.png');
+  background-size: cover; /* Ensures the pattern covers the entire page */
+  background-repeat: repeat; /* Repeats the pattern to cover the page */
+  background-position: center; /* Centers the pattern */
+  color: #ffffff; /* White text */
+  padding: 20px;
+  padding-bottom: 9px; /* Adjusted padding */
+  border-radius: 8px; /* Rounded corners */
+  width: 95%; /* Ensure it fits within the viewport */
+  max-width: 1200px; /* Limit the maximum width */
+  margin: 20px auto; /* Center the container and add vertical spacing */
+  text-align: left;
+  overflow: hidden; /* Prevent horizontal scrolling */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+/* Title Styling */
+.profile-title {
+  font-size: 35px; /* Adjusted font size */
+  font-weight: bold;
+  color: #00ff00; /* Bright green */
+  margin-bottom: 20px;
+}
+
+/* Detail Sections */
+.profile-details {
+  margin-bottom: 30px;
+}
+
+.profile-info {
+  font-size: 20px;
+  margin-bottom: 15px;
+  line-height: 1.6;
+  word-wrap: break-word; /* Handle long text properly */
+  overflow-wrap: break-word;
+}
+
+/* Authenticate Button */
+.authenticate-btn {
+  background-color: #00ff00; /* Green background */
+  color: #121212; /* Dark text */
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+  margin-top: 10px; /* Add spacing */
+}
+
+.authenticate-btn:hover {
+  background-color: #000000; /* Black background on hover */
+  color: #00ff00; /* Bright green font color */
+  transform: scale(1.05); /* Pop-out effect */
+  box-shadow: 0 0 10px #00ff00, 0 0 20px rgba(0, 255, 0, 0.5); /* Glowing green gradient shadow */
+}
+
+/* Add spacing between the light grey and the dark container */
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #121212; /* Dark background for body */
+}

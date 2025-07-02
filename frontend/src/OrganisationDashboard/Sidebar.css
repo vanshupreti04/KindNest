@@ -1,0 +1,52 @@
+/* Sidebar Container */
+.sidebar {
+  position: fixed;
+  top: 90px;
+  left: 0;
+  width: 220px;
+  height: calc(100vh - 90px);
+  background-color: #1e1e1e;
+  color: #ffffff;
+  border-right: 1px solid #00ff00;
+  padding: 10px 0;
+  z-index: 10;
+  overflow-y: auto;
+}
+
+/* Sidebar Items */
+.sidebar-icons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 10px 20px;
+}
+
+/* Sidebar Option Styling */
+.icon {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  padding: 10px;
+  cursor: pointer;
+  color: #ffffff;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  border-radius: 5px;
+}
+
+.icon:hover {
+  background-color: #00aa00;
+  color: #121212;
+  transform: scale(1.05);
+}
+
+/* Logout Button */
+.logout-button {
+  font-weight: bold;
+  color: #ff4444;
+}
+
+.logout-button:hover {
+  background-color: #cc0000;
+  color: #ffffff;
+}

@@ -1,0 +1,47 @@
+/* General Styling */
+.start-tracking {
+    text-align: center;
+    background-color: #121212;
+    color: white;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Title Styling */
+  .start-tracking-title {
+    font-size: 32px;
+    color: #0099ff; /* Blue */
+    margin-bottom: 20px;
+  }
+  
+  /* Description Styling */
+  .start-tracking-description {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    max-width: 600px;
+  }
+  
+  /* Button Styling */
+  .start-tracking-button {
+    padding: 12px 24px;
+    background-color: #0099ff; /* Blue background */
+    color: #121212; /* Dark text */
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .start-tracking-button:hover {
+    background-color: #000000;
+    color: #0099ff; /* Blue text */
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #0099ff, 0 0 20px rgba(0, 153, 255, 0.5);
+  }
+  

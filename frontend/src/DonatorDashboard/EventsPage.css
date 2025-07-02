@@ -1,0 +1,230 @@
+/* General Styling */
+.events-page {
+    padding: 20px;
+    body {
+      background: url('https://www.toptal.com/designers/subtlepatterns/uploads/country-quilt-dark.png');
+      background-size: cover; /* Ensures the pattern covers the entire page */
+      background-repeat: repeat; /* Repeats the pattern to cover the page */
+      background-position: center; /* Centers the pattern */
+      position: relative;
+      z-index: -1;
+    }
+    color: white;
+    min-height: 100vh;
+  }
+  
+  .events-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #0099ff; /* Changed to blue */
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Organization Cards */
+  .organization-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start; /* Align cards to the left */
+  }
+  
+  .organization-card {
+    background-color: #1e1e1e;
+    border: 2px solid #0099ff; /* Changed to blue */
+    border-radius: 8px;
+    width: 23%; /* Adjusted width to fit 4 cards per row */
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  }
+  
+  .organization-photo {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 10px;
+  }
+  
+  .organization-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #0099ff; /* Changed to blue */
+    margin-bottom: 8px;
+  }
+  
+  .organization-address,
+  .organization-phone {
+    font-size: 14px;
+    margin: 4px 0;
+  }
+  
+  .message-button {
+    background-color: #0099ff; /* Changed to blue */
+    color: #121212;
+    padding: 8px 12px; /* Reduced button size */
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px; /* Adjusted font size */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .message-button:hover {
+    background-color: #000000; /* Black background on hover */
+    color: #0099ff; /* Blue text color on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+    box-shadow: 0 0 8px #0099ff, 0 0 16px rgba(0, 153, 255, 0.6); /* Glowing gradient shadow */
+    border-radius: 2px solid transparent; /* Optional border for consistent spacing */
+    border-image: linear-gradient(to right, #0099ff, #0055ff); /* Gradient border effect */
+    border-image-slice: 1; /* Ensures full gradient fills the border */
+  }
+  
+  /* Message Box */
+  .message-box-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .message-box {
+    background-color: #1e1e1e;
+    border: 2px solid #0099ff; /* Changed to blue */
+    border-radius: 8px;
+    width: 400px;
+    padding: 20px;
+    padding-right: 125px;
+    box-shadow: 0 4px 10px rgba(0, 153, 255, 0.5); /* Glowing blue shadow */
+  }
+  
+  .message-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #0099ff; /* Changed to blue */
+    margin-bottom: 15px;
+    margin-left: 138px;
+    margin-top: -5px;
+  }
+  
+  .message-textarea {
+    width:94%;
+    height: 100px;
+    padding: 10px;
+    border-radius: 6px;
+    border: 2px solid #0099ff; /* Changed to blue */
+    background-color: #121212;
+    color: white;
+    margin-bottom: 15px;
+    resize: none; /* Prevent resizing */
+  font-size: 14px; /* Adjust font size for readability */
+  line-height: 1.5; 
+  }
+
+  .message-textarea:focus {
+    outline: none;
+    border-color: #0077cc; /* Darker blue on focus */
+    box-shadow: 0 0 8px rgba(0, 153, 255, 0.5); /* Subtle glowing effect */
+  }
+
+  
+  .message-actions {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .share-button,
+  .cancel-button {
+    padding: 8px 12px; /* Adjusted button size */
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px; /* Adjusted font size */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .share-button{
+    background-color: #0099ff; /* Changed to blue */
+    color: #121212;
+    margin-right: 488px;
+    margin-top: 6px;
+    margin-left: 60px;
+  }
+  
+  .share-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #0099ff; /* Glowing blue shadow */
+  }
+  
+  .cancel-button{
+    background-color: #ff3333;
+    color: white;
+    margin-right: 489px;
+    margin-left: 60px;
+  }
+  
+  .cancel-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #ff3333;
+  }
+ /* Success Message Styling - Inline Position */
+.success-message {
+  background-color: #0099ff; /* Blue background */
+  color: white; /* White text */
+  padding: 15px 30px;
+  border-radius: 8px;
+  font-size: 24px; /* Large font size */
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0, 153, 255, 0.5); /* Glowing effect */
+  text-align: center; /* Center the text within the box */
+  margin-bottom: 20px; /* Add spacing below message */
+  animation: fadeOut 3s ease-in-out; /* Adjust fade-out only */
+}
+
+/* Animation for fading out */
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Organization Cards */
+.organization-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: flex-start; /* Align cards to the left */
+  transition: margin-top 0.3s ease-in-out; /* Smooth movement */
+}
+
+.organization-photo {
+  cursor: pointer;
+  border-radius: 50%;
+  overflow: hidden;
+  width: 100px; /* Make the profile picture circular */
+  height: 100px; 
+}
+.organization-photo img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #00ff00;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+

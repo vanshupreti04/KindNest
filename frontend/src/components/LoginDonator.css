@@ -1,0 +1,73 @@
+/* Style for the Donator Login Page */
+.login-donator-page {
+  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    body {
+      background: url('https://www.toptal.com/designers/subtlepatterns/uploads/country-quilt-dark.png');
+      background-size: cover; /* Ensures the pattern covers the entire page */
+      background-repeat: repeat; /* Repeats the pattern to cover the page */
+      background-position: center; /* Centers the pattern */ /* Dark background */
+      position: relative;
+      z-index: -1;
+    }
+  }
+  
+  .login-donator-heading {
+    margin-bottom: 20px;
+    font-size: 36px;
+    font-family: 'Merriweather', serif;
+    color: #00ff00;
+    text-transform: uppercase;
+  }
+  
+  .login-donator-form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+  }
+  
+  .login-donator-form input {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 2px solid #444;
+    border-radius: 4px;
+    background-color: #1e1e1e;
+    color: #ffffff;
+    transition: border-color 0.3s ease;
+  }
+  
+  .login-donator-form input:focus {
+    border-color: #00ff00;
+    outline: none;
+  }
+  
+  .confirm-login-button {
+    padding: 8px 16px;
+    background: #121212;
+    color: #00ff00;
+    border: 2px solid #00ff00;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease, transform 0.3s ease, border 0.3s ease;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 10px;
+  }
+  
+  .confirm-login-button:hover {
+    color: #121212;
+    background: #00ff00;
+    border: 2px solid transparent;
+    transform: scale(1.05);
+  }
+  
+  .error-message {
+    color: #ffcc00;
+    font-size: 14px;
+    margin-bottom: 20px;
+  }

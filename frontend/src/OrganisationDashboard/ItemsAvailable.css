@@ -1,0 +1,397 @@
+body {
+  background: url('https://www.toptal.com/designers/subtlepatterns/uploads/country-quilt-dark.png');
+  background-size: cover; /* Ensures the pattern covers the entire page */
+  background-repeat: repeat; /* Repeats the pattern to cover the page */
+  background-position: center; /* Centers the pattern */
+  position: relative;
+  z-index: -1;
+}
+
+.items-available {
+  display: flex;
+  padding: 40px;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  background-size: cover;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* Heading Container */
+.items-heading-container {
+  width: 100%;
+  background: linear-gradient(135deg, #00ff00, #008000);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 255, 0, 0.3);
+  margin-bottom: 20px;
+  margin-top: -15px;
+}
+
+.items-heading {
+  font-size: 3rem;
+  color: rgb(0, 0, 0);
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: 3px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  text-shadow: 2px 2px 6px rgba(0, 255, 0, 0.4);
+}
+
+/* Category Buttons Container */
+.category-buttons-container {
+  width: 220px;
+  height: 400px;
+  background: #121212;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 10px rgba(0, 255, 0, 0.3);
+  position: absolute;
+  bottom: 195px;
+  left: 30px;
+}
+
+/* Category Heading */
+.category-heading {
+  font-size: 1.5rem;
+  color: white;
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 5px;
+  font-family: 'Orbitron', sans-serif;
+}
+
+/* Category Buttons */
+.category-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+.category-buttons button {
+  background: linear-gradient(135deg, #00ff00, #008000);
+  color: white;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  width: 100%;
+}
+
+.category-buttons button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #008000, #00ff00);
+}
+
+/* Popup Message */
+.popup-message {
+  background-color: #00ff00;
+  color: black;
+  padding: 15px;
+  margin: 20px 0;
+  font-weight: bold;
+  border-radius: 5px;
+  font-size: 16px;
+  animation: popOutIn 3s ease-in-out;
+}
+/* Keyframes for pop-out and pop-in effect */
+@keyframes popOutIn {
+  0% {
+    transform: scale(0); /* Start from small size */
+    opacity: 0; /* Start fully transparent */
+  }
+  50% {
+    transform: scale(1.1); /* Slightly bigger to simulate pop-out */
+    opacity: 1; /* Fully visible */
+  }
+  100% {
+    transform: scale(1); /* Normal size */
+    opacity: 1; /* Fully visible */
+  }
+}
+/* Accept Request Popup */
+.accept-request {
+  background-color: #00ff00;
+}
+
+/* Reject Request Popup */
+.reject-request {
+  background-color: rgb(255, 24, 24);
+}
+
+/* Items List */
+.items-list-1 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns */
+  gap: 10px;
+  justify-items:center;
+  padding-left: 250px;
+  max-height: 70vh;
+  overflow-y: auto;
+  width: 100%;
+  max-width: 1100px;
+  margin-top: 30px;
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+}
+
+.items-list-1::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for Chrome, Edge, Safari */
+}
+
+/* Responsive Design for smaller screens */
+@media (max-width: 768px) {
+  .items-list-1 {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .items-list-1 {
+    grid-template-columns: 1fr; /* 1 column on small screens */
+  }
+}
+/* Item Card */
+.item-card-1 {
+  background-size: cover;
+  background-position: center;
+  border: 5px solid black;
+  border-radius: 10px;
+  width: 180px;
+  height: 240px;
+  padding: 10px; /* Reduced padding for compact content */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  text-align: center;
+  position: relative;
+  color: white;
+  box-shadow: 0 0px 4px rgb(0, 255, 0);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.item-card-1:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 255, 0, 0.6);
+}
+
+/* Faded Background Image */
+.item-card-1::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  z-index: 1;
+}
+
+.item-image-1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.item-image-1 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Item Details */
+.item-details-1{
+  z-index: 2;
+  position: relative;
+  margin-bottom: 80px;
+   /* Reduced gap below details */
+}
+
+.item-details-1 p {
+  font-size: 16px;
+  margin: 4px 0;
+  outline: 4px color #000000;
+}
+
+.item-details-1 strong {
+  color: #00ff00;
+}
+
+.no-image {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  border-radius: 15px;
+  text-align: center;
+  font-size: 14px;
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+  .item-card {
+    width: 180px;
+    height: 220px;
+  }
+
+  .items-heading {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .item-card {
+    width: 150px;
+    height: 200px;
+  }
+
+  .items-heading {
+    font-size: 1.8rem;
+  }
+}
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: url('https://www.toptal.com/designers/subtlepatterns/uploads/country-quilt-dark.png');
+  background-size: cover; /* Ensures the pattern covers the entire page */
+  background-repeat: repeat; /* Repeats the pattern to cover the page */
+  background-position: center; /* Centers the pattern */ /* Dark background */
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 300px;
+  width: 100%;
+  position: relative;
+  animation: modalFadeIn 0.3s ease;
+}
+
+.close-button {
+  position: absolute;
+  top: 0px;
+  right: 10px;
+  font-size: 25px;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.agree-button,
+.ignore-button {
+  padding: 8px 16px;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.agree-button {
+  background-color: #28a745;
+  color: #fff;
+  margin-right: 10px;
+}
+
+.ignore-button {
+  background-color: #dc3545;
+  color: #fff;
+  cursor: pointer;
+}
+
+.agree-button:hover {
+  background-color: #000000;
+  border: 2px solid #00ff00;
+  color: #00ff00;
+}
+
+.ignore-button:hover {
+  background-color: #000000;
+  border: 2px solid #c82333;
+  color: #ffffff
+}
+.donor-detail-heading{
+  color: #00ff00;
+}
+.success-message-1 {
+  position: fixed;
+  top: 160px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(to right, #00ff00, #4caf50, #2ecc71);  /* Green color to represent success */
+  color: rgb(0, 0, 0);
+  padding: 20px 30px;
+  border-radius: 8px;
+  border: 2px solid black;
+  font-size: 18px;
+  font-weight: bold;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Adds shadow for depth */
+  animation: slideInOut 4s ease forwards; /* New animation for smooth appearance and disappearance */
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+  z-index: 1000;
+  transition: all 0.5s ease-in-out; /* Smooth transition */
+}
+
+/* Animation for the success message */
+@keyframes slideInOut {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-30px); /* Starts slightly above the screen */
+  }
+  20% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0); /* Slide to its normal position */
+  }
+  80% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0); /* Stay in the normal position */
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-30px); /* Slide out and fade out */
+  }
+}
+
+/* Modal styling */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* Fade-in animation for modal */
+@keyframes modalFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,206 @@
+/* Page container */
+.signup-donator-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  /* Page Heading */
+  .signup-donator-heading {
+    margin-bottom: 40px;
+    font-size: 48px;
+    font-family: 'Merriweather', serif;
+    color: #00FF00; /* Green color */
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+  }
+  
+  /* Input Form Styling */
+  .signup-donator-form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+  }
+
+  .success-popup {
+    background-color: #4caf50;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 18px;
+  }
+  
+  .signup-donator-form input {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 2px solid #444; /* Neutral border */
+    border-radius: 4px;
+    background-color: #1e1e1e; /* Darker input background */
+    color: #ffffff;
+    transition: border-color 0.3s ease;
+  }
+  
+  .signup-donator-form input:focus {
+    border-color: #00FF00; /* Green border on focus */
+    outline: none;
+  }
+  
+  /* Confirm Signup Button Styling */
+  .confirm-signup-button {
+    padding: 8px 16px;
+    background: #121212;
+    color: #00FF00;
+    border: 2px solid #00FF00;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 20px;
+    transition: box-shadow 0.3s ease, transform 0.3s ease, border 0.3s ease;
+  }
+  
+  .confirm-signup-button:hover {
+    box-shadow: 0 4px 25px rgba(0, 255, 0, 0.5); /* Green glow */
+    transform: scale(1.05);
+  }
+  
+  /* Password Input Container */
+  .password-container {
+    position: relative;
+    width: 100%;
+  }
+  
+  .password-container input {
+    width: calc(100% - 40px); /* Adjust width for button */
+    padding-right: 27px;
+  }
+  
+  /* Toggle Password Button */
+  .toggle-password {
+    position: absolute;
+    right: -24px;
+    top: 34%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 18px;
+    height: 100%;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Phone Number Input */
+  .phone-number-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .country-code {
+    margin-right: 10px;
+    font-weight: bold;
+    color: #ffffff;
+  }
+  
+  .phone-number-container input {
+    flex: 1;
+  }
+  
+  .phone-number-container input:focus {
+    border-color: #00FF00;
+    outline: none;
+  }
+  
+  /* Error Message Styling */
+  .error-message {
+    color: #ffcc00; /* Yellow error message */
+    font-size: 14px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  /* OTP Verification Page Styling */
+  .signup-donator-heading-1 {
+    margin-bottom: 40px;
+    font-size: 48px;
+    color: #00FF00; /* Green color */
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.7);
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+  }
+  
+  /* OTP Form Styling */
+  .otp-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 320px;
+    border-radius: 8px;
+    padding: 20px;
+  }
+  
+  .otp-form input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 2px solid #00FF00; /* Green border */
+    border-radius: 8px;
+    background-color: #121212;
+    color: #ffffff;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+  }
+  
+  .otp-form input:focus {
+    border-color: #00FF00;
+    outline: none;
+  }
+  
+  /* Verify OTP Button */
+  .verify-otp-button {
+    padding: 12px 24px;
+    background-color: #121212;
+    color: #00FF00;
+    border: 2px solid #00FF00;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  
+  .verify-otp-button:hover {
+    box-shadow: 0 4px 15px rgba(0, 255, 0, 0.5);
+    transform: scale(1.05);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .signup-donator-heading {
+      font-size: 36px;
+    }
+  
+    .otp-form {
+      width: 280px;
+      padding: 15px;
+    }
+  
+    .verify-otp-button {
+      padding: 10px 20px;
+    }
+  }
+  

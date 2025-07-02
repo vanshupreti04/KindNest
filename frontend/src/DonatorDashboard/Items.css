@@ -1,0 +1,230 @@
+/* General Page Styling */
+.items-page {
+    font-family: 'Arial, sans-serif';
+    background-color: #121212;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch; /* Stretch all containers vertically */
+    min-height: 100vh; /* Ensure it fills the entire page */
+    padding: 20px;
+    box-sizing: border-box;
+    gap: 10px;
+  }
+  
+  /* Left Tagline Section */
+  .tagline-box {
+    background: linear-gradient(135deg, #ff9900, #ff6600);
+    width: 25%;
+    border-radius: 12px;
+    box-shadow: 0 8px 26px rgba(255, 153, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin-right: 10px;
+    height: calc(100vh - 80px); /* Full height minus padding */
+  }
+  
+  .tagline {
+    text-align: center;
+    font-family: 'Georgia, serif';
+  }
+  
+  .tagline span {
+    display: block; /* Each word on a new line */
+  }
+  
+  .tagline span:first-child {
+    font-size: 48px; /* Larger font for the first word */
+    font-weight: bold;
+    color: #121212;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6);
+    margin-bottom: 8px;
+  }
+  
+  .tagline span:nth-child(2),
+  .tagline span:nth-child(3),
+  .tagline span:nth-child(4) {
+    font-size: 28px; /* Smaller font for other words */
+    color: #fff;
+    text-shadow: 2px 2px 4px #000;
+  }
+  
+  /* Middle Form Section */
+  .items-container {
+    background: url('https://www.toptal.com/designers/subtlepatterns/uploads/country-quilt-dark.png');
+    background-size: cover; /* Ensures the pattern covers the entire page */
+    background-repeat: repeat; /* Repeats the pattern to cover the page */
+    background-position: center; /* Centers the pattern */
+    border-radius: 12px;
+    padding: 30px;
+    width: 40%;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: calc(100vh - 100px);
+    margin-right: 10px;
+  }
+  
+  .form-title {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #ff9900;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  
+  .form-section {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  
+  .form-section label {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #ff9900;
+  }
+  
+  .form-section input,
+  .form-section select {
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: #2b2b2b;
+    color: #fff;
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .form-section input:focus,
+  .form-section select:focus {
+    box-shadow: 0 0 8px #ff9900;
+  }
+  
+  .submit-section {
+    text-align: center;
+  }
+  
+  .submit-button {
+    background-color: #ff9900;
+    color: #121212;
+    font-size: 18px;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .submit-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 12px #ff9900;
+    background-color: #000;
+    color: #ff9900;
+  }
+  
+  /* Right Side Section */
+  .right-side {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: calc(100vh - 40px);
+  }
+  
+  /* Image Preview Box */
+  .image-preview-container {
+    background: url('https://www.toptal.com/designers/subtlepatterns/uploads/country-quilt-dark.png');
+    background-size: cover; /* Ensures the pattern covers the entire page */
+    background-repeat: repeat; /* Repeats the pattern to cover the page */
+    background-position: center; /* Centers the pattern */
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 3px 16px rgba(255, 153, 0, 0.6); /* Gradient shadow */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 45%; /* Takes 60% of right-side height */
+    margin-bottom: 25px;
+  }
+  
+  .image-preview-container img {
+    max-width: 90%;
+    max-height: 100%;
+    border: 4px solid #ff9900;
+    border-radius: 12px;
+    margin-bottom: 5px;
+    box-shadow: 0 0 16px rgba(255, 153, 0, 0.7);
+    animation: popIn 0.5s ease-in-out;
+  }
+  
+  /* Item List Box */
+  .item-list {
+    background: url('https://www.toptal.com/designers/subtlepatterns/uploads/country-quilt-dark.png');
+    background-size: cover; /* Ensures the pattern covers the entire page */
+    background-repeat: repeat; /* Repeats the pattern to cover the page */
+    background-position: center; /* Centers the pattern */
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 3px 16px rgba(255, 153, 0, 0.6); /* Gradient shadow */
+    color: #ff9900;
+    font-size: 16px;
+    height: 45%; /* Takes 35% of right-side height */
+    overflow-y: auto;
+  }
+  
+  .item-list h3 {
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .item-list ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .item-list li {
+    padding: 8px;
+    border-bottom: 1px solid #444;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .item-list li:last-child {
+    border-bottom: none;
+  }
+  
+  /* Animations */
+  @keyframes popIn {
+    0% {
+      transform: scale(0.8);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  .confirm-list-button {
+    background-color: #ff9900;
+    color: #121212;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    margin-left: 125px;
+    margin-top: 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .confirm-list-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 12px #ff9900;
+  }
+  
+  

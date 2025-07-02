@@ -1,0 +1,140 @@
+/* General Styling */
+body {
+  background-color: #121212;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #e0e0e0;
+}
+
+.view-organisation {
+  padding: 3rem 2%; /* Reduced the padding from 5% to 2% for less margin */
+  text-align: center;
+}
+
+.view-org-title {
+  font-size: 3.5rem;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 20px;
+  margin-top: 1px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-shadow: 0 5px 8px rgba(0, 255, 0, 0.6);
+}
+
+.view-org-tagline {
+  font-size: 1.3rem;
+  font-family: 'Roboto', sans-serif;
+  color: #b3b3b3;
+  margin-bottom: 2.5rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+/* Organisation List */
+.organisation-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.organisation-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #1e1e1e;
+  border: 4px solid;
+  border-image: linear-gradient(45deg, #00ff00, #0064ff) 1;
+  border-radius: 10px;
+  max-width: 450px; /* Slightly adjusted width */
+  width: 100%;
+  padding: 2rem;
+  margin-right: 30px; /* Reduced the margin */
+  margin-left: 30px; /* Reduced the margin */
+  box-shadow: 0 6px 12px rgba(0, 255, 0, 0.5);
+  transition: transform 0.3s, box-shadow 0.3s;
+  flex-wrap: wrap;
+}
+
+.organisation-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 255, 0, 0.7);
+}
+
+/* Organisation Image */
+.organisation-image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.image-wrapper {
+  width: 200px; /* Increased the width of the image wrapper */
+  height: 200px; /* Increased the height of the image wrapper */
+  background: linear-gradient(135deg, #00ff00, #0064ff);
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  box-shadow: 0 6px 12px rgba(0, 255, 0, 0.5);
+}
+
+.organisation-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image is not cut off */
+  border-radius: 8px;
+}
+
+/* Organisation Details */
+.organisation-details-container {
+  flex: 3;
+  text-align: left;
+  padding-left: 1rem;
+}
+
+.organisation-name {
+  font-size: 1.8rem; /* Increased the font size */
+  font-family: 'Orbitron', sans-serif;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.organisation-detail {
+  font-size: 1rem; /* Adjusted font size for readability */
+  color: #b3b3b3;
+  margin: 0.5rem 0;
+  display: flex;
+  align-items: center;
+}
+
+.detail-icon {
+  color: #00ff00;
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .organisation-item {
+    flex-direction: column;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .organisation-details-container {
+    padding-left: 0;
+    text-align: center;
+  }
+}

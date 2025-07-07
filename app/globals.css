@@ -1,26 +1,82 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Menbere:wght@100..700&family=Merienda:wght@300..900&family=Poppins:ital,wght@0,100;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-sans: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: monospace;
+  --font-decorative: 'Merienda', cursive;
+  --font-tagline: 'Menbere', sans-serif;
+  --font-marquee: 'Menbere', sans-serif; /* Specific variable for marquee */
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  font-weight: 400;
+}
+
+/* Font classes */
+.font-decorative {
+  font-family: var(--font-decorative);
+  font-weight: 700;
+}
+
+.font-tagline {
+  font-family: var(--font-tagline);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.font-marquee {
+  font-family: var(--font-marquee);
+  font-weight: 600;
+  letter-spacing: 0.8px; /* Slightly more spacing for marquee */
+  text-transform: uppercase; /* Optional: for consistent casing */
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Optional: Add specific Menbere weights as utility classes */
+.font-menbere-thin {
+  font-family: 'Menbere', sans-serif;
+  font-weight: 100;
+}
+
+.font-menbere-light {
+  font-family: 'Menbere', sans-serif;
+  font-weight: 300;
+}
+
+.font-menbere-regular {
+  font-family: 'Menbere', sans-serif;
+  font-weight: 400;
+}
+
+.font-menbere-medium {
+  font-family: 'Menbere', sans-serif;
+  font-weight: 500;
+}
+
+.font-menbere-semibold {
+  font-family: 'Menbere', sans-serif;
+  font-weight: 600;
+}
+
+.font-menbere-bold {
+  font-family: 'Menbere', sans-serif;
+  font-weight: 700;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }

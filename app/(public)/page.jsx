@@ -1,10 +1,34 @@
+'use client';
+import { useAuth } from '../../components/auth/AuthProvider';
+import { useRouter } from 'next/navigation';
+import { useEffect } from 'react';
 import Header from '../../components/header/header';
 import Image from 'next/image';
 import Marquee from '../../components/marquee/marquee';
-import StickyScrollItem from '../../components/scroll-item/index'; // Add this import
-import { scrollContent } from '../../components/scroll-item/content'; // Add this import
+import StickyScrollItem from '../../components/scroll-item/index';
+import { scrollContent } from '../../components/scroll-item/content';
 
-export default function HomePage() {
+function HomePage() {
+  const { currentUser } = useAuth();
+  const router = useRouter();
+
+  useEffect(() => {
+    if (currentUser) {
+      router.push('/dashboard');
+    }
+  }, [currentUser, router]);
+
+  if (currentUser) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-gray-900 mx-auto mb-4"></div>
+          <p>Redirecting to dashboard...</p>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="relative font-sans">
       {/* Hero Section */}
@@ -173,7 +197,6 @@ export default function HomePage() {
       </div>
 
       {/*New Scrolling*/} 
-
       <div className="py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl md:text-5xl font-bold text-center text-gray-800 mb-12">
@@ -187,41 +210,41 @@ export default function HomePage() {
       </div>
 
       <div className="py-20" style={{
-  backgroundColor: '#ffffff',
-  backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'12\' height=\'16\' viewBox=\'0 0 12 16\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M4 .99C4 .445 4.444 0 5 0c.552 0 1 .45 1 .99v4.02C6 5.555 5.556 6 5 6c-.552 0-1-.45-1-.99V.99zm6 8c0-.546.444-.99 1-.99.552 0 1 .45 1 .99v4.02c0 .546-.444.99-1 .99-.552 0-1-.45-1-.99V8.99z\' fill=\'%2342ff00\' fill-opacity=\'0.12\' fill-rule=\'evenodd\'/%3E%3C/svg%3E")'
-}}>
-  <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-    <div className="max-w-4xl mx-auto relative">
-      {/* Background overlay to ensure text readability */}
-      <div className="absolute inset-0 bg-white opacity-90 -z-10"></div>
-      
-      <div className="relative z-10">
-        <h2 className="text-3xl md:text-4xl font-tagline text-center text-[#005f36] mb-8">
-          Register Your NGO With Us
-        </h2>
-        <div className="space-y-6 text-lg text-gray-600 max-w-3xl mx-auto">
-          <p className="leading-relaxed">
-            Join our network of trusted organizations making real impact. By registering with Kindnest, 
-            you'll gain access to thousands of donors ready to support your cause.
-          </p>
-          <p className="leading-relaxed">
-            Our platform connects NGOs with resources, volunteers, and funding opportunities to amplify 
-            your humanitarian work. Become part of a community that's transforming lives every day.
-          </p>
-          <p className="leading-relaxed">
-            Registration is simple and free. Let's work together to create more meaningful change in 
-            communities that need it most.
-          </p>
-        </div>
-        <div className="pt-12 text-center">
-          <button className="bg-[#01d460] text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 hover:bg-[#00b853] relative z-10">
-            Register Your NGO
-          </button>
+        backgroundColor: '#ffffff',
+        backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'12\' height=\'16\' viewBox=\'0 0 12 16\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M4 .99C4 .445 4.444 0 5 0c.552 0 1 .45 1 .99v4.02C6 5.555 5.556 6 5 6c-.552 0-1-.45-1-.99V.99zm6 8c0-.546.444-.99 1-.99.552 0 1 .45 1 .99v4.02c0 .546-.444.99-1 .99-.552 0-1-.45-1-.99V8.99z\' fill=\'%2342ff00\' fill-opacity=\'0.12\' fill-rule=\'evenodd\'/%3E%3C/svg%3E")'
+      }}>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto relative">
+            {/* Background overlay to ensure text readability */}
+            <div className="absolute inset-0 bg-white opacity-90 -z-10"></div>
+            
+            <div className="relative z-10">
+              <h2 className="text-3xl md:text-4xl font-tagline text-center text-[#005f36] mb-8">
+                Register Your NGO With Us
+              </h2>
+              <div className="space-y-6 text-lg text-gray-600 max-w-3xl mx-auto">
+                <p className="leading-relaxed">
+                  Join our network of trusted organizations making real impact. By registering with Kindnest, 
+                  you'll gain access to thousands of donors ready to support your cause.
+                </p>
+                <p className="leading-relaxed">
+                  Our platform connects NGOs with resources, volunteers, and funding opportunities to amplify 
+                  your humanitarian work. Become part of a community that's transforming lives every day.
+                </p>
+                <p className="leading-relaxed">
+                  Registration is simple and free. Let's work together to create more meaningful change in 
+                  communities that need it most.
+                </p>
+              </div>
+              <div className="pt-12 text-center">
+                <button className="bg-[#01d460] text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 hover:bg-[#00b853] relative z-10">
+                  Register Your NGO
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</div>
 
       {/* Additional Spacer Section */}
       <div className="py-32 bg-white">
@@ -234,3 +257,5 @@ export default function HomePage() {
     </div>
   );
 }
+
+export default HomePage;

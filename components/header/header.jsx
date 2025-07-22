@@ -1,29 +1,45 @@
+'use client';
+import Link from 'next/link';
+import { useAuth } from '../auth/AuthProvider';
 import './Header.css';
 
-export default function Header() {
+const Header = () => {
+  const { currentUser } = useAuth();
+
   return (
     <header className="header">
       <div className="header-container">
         <div className="header-content">
           {/* Left - Brand Name */}
-          <div className="brand">
+          <Link href="/" className="brand">
             Kindnest
-          </div>
+          </Link>
 
           {/* Center - Navigation Links */}
           <nav className="nav-links">
-            <span className="nav-item">Home</span>
-            <span className="nav-item">Team</span>
-            <span className="nav-item">Careers</span>
+            <Link href="/" className="nav-item">Home</Link>
+            <Link href="/team" className="nav-item">Team</Link>
+            <Link href="/careers" className="nav-item">Careers</Link>
+            {currentUser && (
+              <Link href="/dashboard" className="nav-item">Dashboard</Link>
+            )}
           </nav>
 
           {/* Right - Auth Buttons */}
           <div className="auth-buttons">
-            <span className="login">Login</span>
-            <span className="signup">Sign Up</span>
+            {currentUser ? (
+              <span className="user-email">{currentUser.email}</span>
+            ) : (
+              <>
+                <Link href="/login" className="login">Login</Link>
+                <Link href="/signup" className="signup">Sign Up</Link>
+              </>
+            )}
           </div>
         </div>
       </div>
     </header>
   );
-}
+};
+
+export default Header;

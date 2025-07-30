@@ -27,28 +27,16 @@ function DashboardLayout({ children }) {
   }
 
   return (
-    <div className="min-h-screen flex">
+    <div className="min-h-screen flex overflow-hidden"> {/* Prevent scrolling */}
       {/* Sidebar */}
-      <aside className="w-48 bg-gray-100 p-4 border-r flex flex-col">
-        <h2 className="font-bold mb-4 text-lg">Dashboards</h2>
+      <aside className="w-48 bg-gray-100 p-4 border-r flex flex-col h-screen sticky top-0"> {/* Fixed height */}
+        <h2 className="font-bold mb-4 text-lg">KindNest</h2> {/* Changed title */}
         <nav className="space-y-2 flex-1">
           <Link 
-            href="/dashboard/admin" 
+            href="/dashboard/settings" 
             className="block p-2 hover:bg-gray-200 rounded transition-colors"
           >
-            Admin
-          </Link>
-          <Link 
-            href="/dashboard/donor" 
-            className="block p-2 hover:bg-gray-200 rounded transition-colors"
-          >
-            Donor
-          </Link>
-          <Link 
-            href="/dashboard/ngo" 
-            className="block p-2 hover:bg-gray-200 rounded transition-colors"
-          >
-            NGO
+            Settings
           </Link>
         </nav>
         
@@ -62,8 +50,8 @@ function DashboardLayout({ children }) {
         </div>
       </aside>
       
-      {/* Main content */}
-      <div className="flex-1 p-6 bg-gray-50">
+      {/* Main content (no-scroll if needed) */}
+      <div className="flex-1 p-6 bg-gray-50 overflow-y-auto"> 
         {children}
       </div>
     </div>

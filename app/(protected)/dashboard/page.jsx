@@ -1,46 +1,53 @@
 'use client';
 import { useAuth } from '../../../components/auth/AuthProvider';
 import React from 'react';
+import Link from 'next/link';
 
 function DashboardPage() {
   const { currentUser } = useAuth();
 
   return (
-    <div className="space-y-6">
-      <h1 className="text-3xl font-bold">Welcome to Dashboard</h1>
+    <div className="flex flex-col overflow-hidden">
       
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {/* Dashboard Cards */}
-        <div className="bg-white p-6 rounded-lg shadow">
-          <h2 className="text-xl font-semibold mb-2">Admin Overview</h2>
-          <p className="text-gray-600">Manage your platform settings and users</p>
-        </div>
-        
-        <div className="bg-white p-6 rounded-lg shadow">
-          <h2 className="text-xl font-semibold mb-2">Donor Portal</h2>
-          <p className="text-gray-600">View and manage your donations</p>
-        </div>
-        
-        <div className="bg-white p-6 rounded-lg shadow">
-          <h2 className="text-xl font-semibold mb-2">NGO Dashboard</h2>
-          <p className="text-gray-600">Manage your organization's profile</p>
-        </div>
-        
-        <div className="bg-white p-6 rounded-lg shadow">
-          <h2 className="text-xl font-semibold mb-2">Recent Activity</h2>
-          <p className="text-gray-600">View your recent interactions</p>
-        </div>
-      </div>
+      <div className="flex-1 flex flex-col items-center justify-start pt-20 p-6 bg-gray-50">
       
-      {currentUser && (
-        <div className="mt-8 p-6 bg-white rounded-lg shadow">
-          <h2 className="text-xl font-semibold mb-4">Your Account</h2>
-          <div className="space-y-2">
-            <p><span className="font-medium">Email:</span> {currentUser.email}</p>
-            <p><span className="font-medium">Provider:</span> {currentUser.providerData[0]?.providerId}</p>
+        <h1 className="text-5xl font-bold text-gray-800 mb-12">Continue As</h1>
+
+       
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-4xl">
+          {/* NGO Card */}
+          <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-200 flex flex-col h-64">
+            <div className="flex flex-col items-center justify-center flex-1">
+              <h2 className="text-2xl font-bold text-gray-800 mb-4">NGO</h2>
+              <p className="text-gray-600 text-center mb-6">
+                Continue your journey as an NGO partner. Manage your campaigns, track donations, and make an impact.
+              </p>
+            </div>
+            <Link 
+              href="/dashboard/register-ngo" 
+              className="w-full py-3 px-4 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg text-center transition-colors"
+            >
+              Continue
+            </Link>
+          </div>
+
+          {/* Donor Card */}
+          <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-200 flex flex-col h-64">
+            <div className="flex flex-col items-center justify-center flex-1">
+              <h2 className="text-2xl font-bold text-gray-800 mb-4">Donor</h2>
+              <p className="text-gray-600 text-center mb-6">
+                Continue your support. Discover NGOs, track your donations, and see the difference you're making.
+              </p>
+            </div>
+            <Link 
+              href="/dashboard/register-donor"  
+              className="w-full py-3 px-4 bg-green-600 hover:bg-green-700 text-white font-medium rounded-lg text-center transition-colors"
+            >
+              Continue
+            </Link>
           </div>
         </div>
-      )}
+      </div>
     </div>
   );
 }

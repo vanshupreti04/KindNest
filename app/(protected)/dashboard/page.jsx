@@ -14,13 +14,13 @@ function DashboardPage() {
         <h1 className="text-5xl font-bold text-gray-800 mb-12">Continue As</h1>
 
        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-4xl">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-6xl">
           {/* NGO Card */}
           <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-200 flex flex-col h-64">
             <div className="flex flex-col items-center justify-center flex-1">
               <h2 className="text-2xl font-bold text-gray-800 mb-4">NGO</h2>
               <p className="text-gray-600 text-center mb-6">
-                Continue your journey as an NGO partner. Manage your campaigns, track donations, and make an impact.
+                Continue your journey as an NGO partner. Manage your campaigns, track donations, and make impact.
               </p>
             </div>
             <Link 
@@ -42,6 +42,22 @@ function DashboardPage() {
             <Link 
               href="/dashboard/register-donor"  
               className="w-full py-3 px-4 bg-green-600 hover:bg-green-700 text-white font-medium rounded-lg text-center transition-colors"
+            >
+              Continue
+            </Link>
+          </div>
+
+          {/* Admin Card */}
+          <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-200 flex flex-col h-64">
+            <div className="flex flex-col items-center justify-center flex-1">
+              <h2 className="text-2xl font-bold text-gray-800 mb-4">Admin</h2>
+              <p className="text-gray-600 text-center mb-6">
+                Access the admin dashboard to manage users, verify NGOs, and oversee platform operations.
+              </p>
+            </div>
+            <Link 
+              href="/dashboard/register-admin"
+              className="w-full py-3 px-4 bg-purple-600 hover:bg-purple-700 text-white font-medium rounded-lg text-center transition-colors"
             >
               Continue
             </Link>

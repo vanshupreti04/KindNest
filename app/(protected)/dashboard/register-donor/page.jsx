@@ -1,6 +1,6 @@
 'use client'
 import { useState } from 'react'
-import { collection, addDoc } from 'firebase/firestore'
+import { collection, addDoc, doc, setDoc } from 'firebase/firestore'
 import { db } from '../../../../lib/firebase'
 import { useAuth } from '../../../../components/auth/AuthProvider'
 
@@ -62,34 +62,62 @@ function DonorPage() {
   const handleSubmit = async (e) => {
     e.preventDefault()
     setIsSubmitting(true)
-    
+  
     try {
       if (!currentUser) {
         throw new Error('You must be logged in to register as a donor')
       }
 
-      // Prepare the donor data
+      // Generate numeric ID similar to NGO IDs
+      const donorId = Date.now().toString(); // This creates a 13-digit number
+
+      // Prepare the donor data with structured format
       const donorData = {
-        ...formData,
-        userId: currentUser.uid,
-        email: currentUser.email,
-        createdAt: new Date().toISOString(),
-        status: 'active',
-        verification: 'pending',
-        files: files.map(file => ({
-          name: file.name,
-          size: file.size,
-          type: file.type
-        }))
+        id: donorId, // Using numeric ID
+        basicInfo: {
+          firstName: formData.firstName,
+          lastName: formData.lastName,
+          mobile: formData.mobile,
+          email: currentUser.email,
+          userId: currentUser.uid,
+          createdAt: new Date().toISOString(),
+          status: 'pending', // For admin verification
+          lastUpdated: new Date().toISOString()
+        },
+        contactInfo: {
+          address: {
+            building: formData.address.building,
+            area: formData.address.area,
+            city: formData.address.city,
+            state: formData.address.state,
+            pincode: formData.address.pincode
+          }
+        },
+        documents: {
+          type: formData.documentType,
+          id: formData.documentId,
+          files: files.map(file => ({
+            name: file.name,
+            size: file.size,
+            type: file.type
+            // Note: You'll need to upload files to storage and add URLs here
+          }))
+        },
+        verification: {
+          verified: false,
+          verifiedBy: null,
+          verifiedAt: null,
+          comments: null
+        }
       }
 
-      // Add to Firestore
-      const docRef = await addDoc(collection(db, 'donors'), donorData)
+      // Add to Firestore with numeric ID as document ID
+      await setDoc(doc(db, 'donors', donorId), donorData);
       
       setSubmitStatus({
         success: true,
-        message: 'Donor registration successful! Thank you for your contribution.'
-      })
+        message: `Donor registration submitted! Your ID: ${donorId}`
+      });
 
       // Reset form
       setFormData({
@@ -105,20 +133,21 @@ function DonorPage() {
         },
         documentType: '',
         documentId: ''
-      })
-      setSelectedDoc('')
-      setShowDocInput(false)
-      setFiles([])
+      });
+      setSelectedDoc('');
+      setShowDocInput(false);
+      setFiles([]);
+
     } catch (error) {
-      console.error("Registration error:", error)
+      console.error("Registration error:", error);
       setSubmitStatus({
         success: false,
         message: error.message || 'Registration failed. Please try again.'
-      })
+      });
     } finally {
-      setIsSubmitting(false)
+      setIsSubmitting(false);
     }
-  }
+  };
 
   return (
     <div className="max-w-3xl mx-auto p-4">

@@ -1,8 +1,8 @@
 'use client'
 import { useState } from 'react'
-import { collection, addDoc } from 'firebase/firestore'
-import { db } from '../../../../lib/firebase' // Your Firebase configuration
-import { useAuth } from '../../../../components/auth/AuthProvider' // Your auth context
+import { collection, addDoc, doc, setDoc } from 'firebase/firestore'
+import { db } from '../../../../lib/firebase'
+import { useAuth } from '../../../../components/auth/AuthProvider'
 
 export default function Page() {
   const { currentUser } = useAuth()
@@ -13,7 +13,6 @@ export default function Page() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState({ success: false, message: '' })
 
-  // Form data state
   const [formData, setFormData] = useState({
     ngoName: '',
     ownerName: '',
@@ -32,7 +31,7 @@ export default function Page() {
     const value = e.target.value
     setSelectedDoc(value)
     setShowDocInput(true)
-    setFormData({...formData, documentType: value})
+    setFormData({ ...formData, documentType: value })
   }
 
   const handleFileChange = (e) => {
@@ -41,7 +40,7 @@ export default function Page() {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target
-    
+
     if (name.includes('.')) {
       const [parent, child] = name.split('.')
       setFormData({
@@ -60,37 +59,66 @@ export default function Page() {
   }
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-    
+    e.preventDefault();
+    setIsSubmitting(true);
+
     try {
       if (!currentUser) {
-        throw new Error('You must be logged in to register an NGO')
+        throw new Error('You must be logged in to register an NGO');
       }
 
-      // Prepare the NGO data with user UID
+      // Create a unique ID for this NGO registration
+      const ngoId = Date.now().toString();
+
+      // Prepare the NGO data
       const ngoData = {
-        ...formData,
-        establishedDate,
-        createdBy: currentUser.uid,
-        createdAt: new Date().toISOString(),
-        status: 'pending',
-        files: files.map(file => ({
-          name: file.name,
-          size: file.size,
-          type: file.type
-          // Note: You're not uploading files, just storing metadata
-        }))
-      }
+        id: ngoId,
+        basicInfo: {
+          ngoName: formData.ngoName,
+          ownerName: formData.ownerName,
+          establishedDate: establishedDate,
+          createdBy: currentUser.uid,
+          createdByEmail: currentUser.email, // Add user's email here
+          createdAt: new Date().toISOString(),
+          status: 'pending',
+          lastUpdated: new Date().toISOString()
+        },
+        contactInfo: {
+          address: {
+            building: formData.address.building,
+            area: formData.address.area,
+            city: formData.address.city,
+            state: formData.address.state,
+            pincode: formData.address.pincode
+          },
+          email: currentUser.email // Alternatively store it in contactInfo
+        },
+        documents: {
+          type: formData.documentType,
+          id: formData.documentId,
+          files: files.map(file => ({
+            name: file.name,
+            size: file.size,
+            type: file.type,
+            lastModified: file.lastModified
+          }))
+        },
+        verification: {
+          verified: false,
+          verifiedBy: null,
+          verifiedAt: null,
+          comments: null
+        }
+      };
 
-      // Add to Firestore
-      const ngosCollection = collection(db, 'ngos');
-      const docRef = await addDoc(collection(db, 'ngos'), ngoData)
-      
+      // Add to Firestore - simple collection with status field
+      const ngosRef = collection(db, 'ngos');
+      await setDoc(doc(ngosRef, ngoId), ngoData);
+
       setSubmitStatus({
         success: true,
-        message: `NGO registered successfully! ID: ${docRef.id}`
-      })
+        message: `NGO registered successfully! Your registration ID: ${ngoId}`
+      });
 
       // Reset form
       setFormData({
@@ -105,30 +133,28 @@ export default function Page() {
         },
         documentType: '',
         documentId: ''
-      })
-      setSelectedDoc('')
-      setShowDocInput(false)
-      setEstablishedDate('')
-      setFiles([])
+      });
+      setSelectedDoc('');
+      setShowDocInput(false);
+      setEstablishedDate('');
+      setFiles([]);
     } catch (error) {
-    console.error("Firestore error:", error);
-    setSubmitStatus({
-      success: false,
-      message: error.message || 'Failed to register NGO'
-    });
-  } finally {
-    setIsSubmitting(false);
-  }
-};
-
+      console.error("Firestore error:", error);
+      setSubmitStatus({
+        success: false,
+        message: error.message || 'Failed to register NGO'
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
   return (
     <div className="max-w-3xl mx-auto p-4">
       <h1 className="text-4xl font-bold text-gray-800 mb-6 text-center">Register Your NGO</h1>
-      
+
       {submitStatus.message && (
-        <div className={`mb-6 p-4 rounded-md ${
-          submitStatus.success ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'
-        }`}>
+        <div className={`mb-6 p-4 rounded-md ${submitStatus.success ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'
+          }`}>
           {submitStatus.message}
         </div>
       )}
@@ -138,8 +164,8 @@ export default function Page() {
         <div className="mb-6 grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">NGO Name*</label>
-            <input 
-              type="text" 
+            <input
+              type="text"
               name="ngoName"
               className="w-full px-3 py-2 rounded-md border border-gray-300 focus:ring-2 focus:ring-blue-500"
               placeholder="NGO full name"
@@ -148,11 +174,11 @@ export default function Page() {
               required
             />
           </div>
-          
+
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">Owner Name*</label>
-            <input 
-              type="text" 
+            <input
+              type="text"
               name="ownerName"
               className="w-full px-3 py-2 rounded-md border border-gray-300 focus:ring-2 focus:ring-blue-500"
               placeholder="Founder name"
@@ -167,8 +193,8 @@ export default function Page() {
         <div className="mb-6 flex justify-center">
           <div className="w-full max-w-xs">
             <label className="block text-sm font-medium text-gray-700 mb-1">Established Date*</label>
-            <input 
-              type="date" 
+            <input
+              type="date"
               className="w-full px-3 py-2 rounded-md border border-gray-300 focus:ring-2 focus:ring-blue-500"
               value={establishedDate}
               onChange={(e) => setEstablishedDate(e.target.value)}
@@ -182,8 +208,8 @@ export default function Page() {
         <div className="mb-6 grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">Building*</label>
-            <input 
-              type="text" 
+            <input
+              type="text"
               name="address.building"
               className="w-full px-3 py-2 rounded-md border border-gray-300 focus:ring-2 focus:ring-blue-500"
               placeholder="Building name/number"
@@ -192,11 +218,11 @@ export default function Page() {
               required
             />
           </div>
-          
+
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">Area*</label>
-            <input 
-              type="text" 
+            <input
+              type="text"
               name="address.area"
               className="w-full px-3 py-2 rounded-md border border-gray-300 focus:ring-2 focus:ring-blue-500"
               placeholder="Locality/Area"
@@ -205,11 +231,11 @@ export default function Page() {
               required
             />
           </div>
-          
+
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">City*</label>
-            <input 
-              type="text" 
+            <input
+              type="text"
               name="address.city"
               className="w-full px-3 py-2 rounded-md border border-gray-300 focus:ring-2 focus:ring-blue-500"
               placeholder="City"
@@ -218,12 +244,12 @@ export default function Page() {
               required
             />
           </div>
-          
+
           <div className="grid grid-cols-2 gap-4">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">State*</label>
-              <input 
-                type="text" 
+              <input
+                type="text"
                 name="address.state"
                 className="w-full px-3 py-2 rounded-md border border-gray-300 focus:ring-2 focus:ring-blue-500"
                 placeholder="State"
@@ -234,8 +260,8 @@ export default function Page() {
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">Pincode*</label>
-              <input 
-                type="text" 
+              <input
+                type="text"
                 name="address.pincode"
                 className="w-full px-3 py-2 rounded-md border border-gray-300 focus:ring-2 focus:ring-blue-500"
                 placeholder="Pincode"
@@ -253,7 +279,7 @@ export default function Page() {
         <div className="mb-6 flex flex-col md:flex-row items-start md:items-end gap-4">
           <div className="w-full md:w-auto">
             <label className="block text-sm font-medium text-gray-700 mb-1">Select Document*</label>
-            <select 
+            <select
               className="w-full md:w-48 px-3 py-2 rounded-md border border-gray-300 focus:ring-2 focus:ring-blue-500"
               onChange={handleDocChange}
               value={selectedDoc}
@@ -265,17 +291,17 @@ export default function Page() {
               <option value="pancard">PAN Card</option>
             </select>
           </div>
-          
+
           {showDocInput && (
             <div className="w-full md:w-48">
-              <input 
-                type="text" 
+              <input
+                type="text"
                 name="documentId"
                 className="w-full px-3 py-2 rounded-md border border-gray-300 focus:ring-2 focus:ring-blue-500"
                 placeholder={
                   selectedDoc === 'darpan' ? 'Darpan ID' :
-                  selectedDoc === 'company' ? 'Registration No' :
-                  'PAN Number'
+                    selectedDoc === 'company' ? 'Registration No' :
+                      'PAN Number'
                 }
                 value={formData.documentId}
                 onChange={handleInputChange}
@@ -285,7 +311,7 @@ export default function Page() {
           )}
         </div>
 
-        {/* Upload Proof Section (Storing metadata only) */}
+        {/* Upload Proof Section */}
         <h2 className="text-sm font-bold uppercase text-gray-700 mb-3 tracking-wider">Upload Proof</h2>
         <div className="mb-8">
           <label className="block text-sm font-medium text-gray-700 mb-2">Upload supporting documents*</label>
@@ -297,9 +323,9 @@ export default function Page() {
                 </svg>
                 Add Files
               </span>
-              <input 
-                type="file" 
-                className="hidden" 
+              <input
+                type="file"
+                className="hidden"
                 onChange={handleFileChange}
                 multiple
                 required
